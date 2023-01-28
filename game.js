@@ -90,7 +90,7 @@ function buyD1() {
 function maxD1() {
   let a = OmegaNum.floor(game.n.div(10));
   game.n = game.n.minus(OmegaNum.mul(a,10));
-  game.d1 = game.d1.add(a);
+  game.d1 = OmegaNum.mul(game.d1.add(a),OmegaNum.pow(2,a));
   if(game.u[2])
     game.dm[1] = game.dm[1].mul(OmegaNum.pow(OmegaNum.tetrate(a, game.me), a));
   else
