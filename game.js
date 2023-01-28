@@ -76,7 +76,7 @@ function makeM1(a) {
 function buyD1() {
   if(game.n.gte(10)) {
     game.n = game.n.minus(10);
-    game.d1 = game.d1.add(1);
+    game.d1 = OmegaNum.add(game.d1.mul(2),1);
     if(game.u[2])
       game.dm[1] = game.dm[1].mul(OmegaNum.tetrate(game.n, game.me));
     else
