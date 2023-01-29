@@ -76,7 +76,7 @@ function makeM1(a) {
 function buyD1() {
   if(game.n.gte(10)) {
     game.n = game.n.minus(10);
-    game.d1 = OmegaNum.add(game.d1.mul(2),1);
+    game.d1 = OmegaNum.add(game.d1.mul(2500),1);
     if(game.u[2])
       game.dm[1] = game.dm[1].mul(OmegaNum.tetrate(game.n, game.me));
     else
@@ -131,7 +131,7 @@ function buyD2() {
 function maxD2() {
   let a = OmegaNum.floor(game.n.div(1e10));
   game.n = game.n.minus(OmegaNum.mul(a,1e10));
-  game.d2 = game.d2.add(a);
+  game.d2 = game.d2.add(OmegaNum.pow(3,a));
   if(game.u[2])
     game.dm[2] = game.dm[2].mul(OmegaNum.pow(OmegaNum.tetrate(a, game.me), a));
   else
@@ -279,7 +279,7 @@ function buyA1() {
 function maxA1() {
   let a = OmegaNum.floor(game.a.div(10));
   game.a = game.a.minus(OmegaNum.mul(a,10));
-  game.a1 = game.a1.add(a);
+  game.a1 = game.a1.mul(a);
   
   document.getElementById('Da').innerHTML = game.a.round().toHyperE();
   document.getElementById('Da1').innerHTML = game.a1.round().toHyperE();
