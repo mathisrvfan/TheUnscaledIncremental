@@ -117,7 +117,7 @@ function maxD1A(b) {
 function buyD2() {
   if(game.n.gte(1e10)) {
     game.n = game.n.minus(1e10);
-    game.d2 = game.d2.add(1);
+    game.d2 = OmegaNum.add(OmegaNum.pow(game.d2.pow,2),1);
     if(game.u[2])
       game.dm[2] = game.dm[2].mul(OmegaNum.tetrate(game.n, game.me));
     else
